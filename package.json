@@ -1,0 +1,29 @@
+{
+  "name": "chatkit",
+  "version": "1.0.0",
+  "description": "",
+  "private": "true",
+  "workspaces": [
+    "packages/*"
+  ],
+  "homepage": "https://github.com/shivanssh/chatKit#readme",
+  "bugs": {
+    "url": "https://github.com/shivanssh/chatKit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivanssh/chatKit.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "scripts": {
+    "dev:cli": "bun run packages/cli/src/index.ts"
+  },
+  "dependencies": {
+    "commander": "^15.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.1"
+  }
+}
