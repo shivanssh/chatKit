@@ -12,20 +12,32 @@
       },
     },
     "packages/cli": {
-      "name": "cli",
+      "name": "sendkit-cli",
       "version": "1.0.0",
       "dependencies": {
         "commander": "^15.0.0",
+        "sendkit-core": "workspace:*",
+      },
+    },
+    "packages/core": {
+      "name": "sendkit-core",
+      "version": "1.0.0",
+      "dependencies": {
+        "zod": "^4.4.3",
       },
     },
   },
   "packages": {
     "@types/node": ["@types/node@26.0.1", "", { "dependencies": { "undici-types": "~8.3.0" } }, "sha512-fc3KiUoBt6kie0N9bIW3E47vZsuaMf0PM2AaUpLCLT0s/LvX1nxAim6Fc049cNxODPpGm6qRAuUOB86SkRuPQw=="],
 
-    "cli": ["cli@workspace:packages/cli"],
-
     "commander": ["commander@15.0.0", "", {}, "sha512-z67u4ZhzCL/Tydu1lJARtEZYWbWaN7oYLHbsuzocr6y4N6WZAagG3RQ4FW61V1/0+jImpj293XfrcYnd1qxtPg=="],
 
+    "sendkit-cli": ["sendkit-cli@workspace:packages/cli"],
+
+    "sendkit-core": ["sendkit-core@workspace:packages/core"],
+
     "undici-types": ["undici-types@8.3.0", "", {}, "sha512-j375ScV60dom+YkPFIfTLcOiPxkN/buHz5GobjLhixFuANaNs3C9l4GmrWqejgXWJ7BbJcFYpTEUkS1Ge8bpZQ=="],
+
+    "zod": ["zod@4.4.3", "", {}, "sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ=="],
   }
 }

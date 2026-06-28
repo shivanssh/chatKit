@@ -1,10 +1,11 @@
 {
-  "name": "cli",
+  "name": "sendkit-cli",
   "version": "1.0.0",
   "author": "",
   "main": "index.js",
   "dependencies": {
-    "commander": "^15.0.0"
+    "commander": "^15.0.0",
+    "sendkit-core": "workspace:*"
   },
   "description": "",
   "license": "ISC",

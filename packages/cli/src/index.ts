@@ -1,35 +1,7 @@
 import { Command } from "commander";
-
-type TelegramResponse = {
-  ok: boolean;
-  result?: {
-    message_id?: number;
-  };
-  description?: string;
-};
+import { sendTelegramMessage } from "sendkit-core";
 
 const program = new Command();
-
-const botSendMsg = async (token: string, body: string) => {
-  try {
-    const promiseRes = await fetch(
-      `https://api.telegram.org/bot${token}/sendMessage`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body,
-      },
-    );
-
-    const response = await promiseRes.json();
-    return response as TelegramResponse;
-  } catch (error: any) {
-    console.log("Error with API call", error?.message);
-    process.exit(1);
-  }
-};
 
 program.name("chatkit").description("ChatKit CLI");
 program
@@ -50,17 +22,19 @@ program
       process.exit(1);
     }
 
-    const requestBody = JSON.stringify({ chat_id: chatId, text: message });
-    const botResponse = await botSendMsg(token, requestBody);
-    if (!botResponse.ok) {
-      console.log(`Telegram API failed ${botResponse?.description}`);
+    try {
+      const res = await sendTelegramMessage({
+        botToken: token,
+        chatId,
+        message,
+      });
+
+      console.log(`Sent telegram message to chat`, res.chatId);
+      console.log(`Telegram messageId`, res.messageId);
+    } catch (error) {
+      const errorMsg = error instanceof Error ? error?.message : String(error);
+      console.log("Error with API call", errorMsg);
       process.exit(1);
-    }
-
-    const messageId = botResponse?.result?.message_id;
-
-    if (messageId) {
-      console.log("Message id form bot", messageId);
     }
   });
 
