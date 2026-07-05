@@ -1,5 +1,5 @@
 import { Command } from "commander";
-import { sendTelegramMessage } from "sendkit-core";
+import { sendTelegramMessage } from "chatkit-core";
 
 const program = new Command();
 

@@ -1,11 +1,11 @@
 {
-  "name": "sendkit-cli",
+  "name": "chatkit-cli",
   "version": "1.0.0",
   "author": "",
   "main": "index.js",
   "dependencies": {
     "commander": "^15.0.0",
-    "sendkit-core": "workspace:*"
+    "chatkit-core": "workspace:*"
   },
   "description": "",
   "license": "ISC",
