@@ -4,6 +4,7 @@
   "description": "",
   "private": "true",
   "workspaces": [
+    "apps/*",
     "packages/*"
   ],
   "homepage": "https://github.com/shivanssh/chatKit#readme",
@@ -19,7 +20,8 @@
   "type": "module",
   "scripts": {
     "dev:cli": "bun run packages/cli/src/index.ts",
-    "dev:local-mcp": "bun run packages/local-mcp/src/index.ts"
+    "dev:local-mcp": "bun run packages/local-mcp/src/index.ts",
+    "dev:remote-mcp": "bun run apps/remote-mcp/src/index.ts"
   },
   "dependencies": {
     "commander": "^15.0.0"

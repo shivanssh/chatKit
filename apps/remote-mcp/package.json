@@ -1,0 +1,24 @@
+{
+  "name": "chatkit-remote-mcp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "hono": "^4.12.27",
+    "zod": "^4.4.3",
+    "chatkit-core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0"
+  }
+}
